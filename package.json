@@ -1,0 +1,18 @@
+{
+  "name": "louvi-repo",
+  "private": true,
+  "description": "Dev tooling for the Louvi repo; the plugin itself is src/louvi/ and needs no install.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"src/tests/*.test.mjs\"",
+    "typecheck": "tsc --noEmit",
+    "validate": "claude plugin validate --strict . && claude plugin validate --strict src/louvi"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3"
+  }
+}
