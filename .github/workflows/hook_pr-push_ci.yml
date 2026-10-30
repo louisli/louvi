@@ -1,0 +1,31 @@
+# Hook: on every pull request and push to main, run the guard tests and validate
+# the plugin and marketplace manifests (docs/CLAUDE_louvi.md, "Checks before any push").
+name: hook_pr-push_ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Guard tests
+        run: python -m unittest discover -s src/tests -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate the marketplace and plugin
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude plugin validate --strict .
+          claude plugin validate --strict src/louvi

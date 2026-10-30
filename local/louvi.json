@@ -1,0 +1,5 @@
+{
+  "guards": {
+    "protect-branch": { "on": true, "branches": ["main"] }
+  }
+}

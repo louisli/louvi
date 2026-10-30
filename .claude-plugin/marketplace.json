@@ -1,0 +1,14 @@
+{
+  "name": "louvi",
+  "owner": { "name": "The Louvi authors" },
+  "metadata": {
+    "description": "Louvi: a starting point for working with AI."
+  },
+  "plugins": [
+    {
+      "name": "louvi",
+      "source": "./src/louvi",
+      "description": "Patterns, repo structure, ticket-first work, and config-driven guards."
+    }
+  ]
+}
