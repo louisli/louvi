@@ -20,7 +20,7 @@ Read `docs/CLAUDE_louvi.md` first.
 | If your task is… | Read |
 | --- | --- |
 | changing a skill | `src/louvi/skills/<name>/SKILL.md`, then `src/louvi/README.md` |
-| changing a guard | `src/louvi/hooks/guard.py` and `src/tests/test_guard.py` |
+| changing a guard | `src/louvi/hooks/guard.mjs` and `src/tests/guard.test.mjs` |
 | the plugin or marketplace manifests | `src/louvi/.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json` |
 | a new idea for Louvi | `local/ideas/README.md` |
 | a file that fits nowhere yet | `local/unsorted/README.md` |

@@ -21,8 +21,8 @@ For a single session without installing: `claude --plugin-dir <path to src/louvi
 
 ## Guards
 
-They're `PreToolUse` hooks (`hooks/hooks.json`, `hooks/guard.py`, which needs
-Python 3). Each repo sets them in `local/louvi.json`:
+They're `PreToolUse` hooks (`hooks/hooks.json`, `hooks/guard.mjs`, which needs
+Node 22 or later and nothing else). Each repo sets them in `local/louvi.json`:
 
 ```json
 {

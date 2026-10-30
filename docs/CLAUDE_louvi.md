@@ -25,10 +25,17 @@ Rules for working on Louvi, for people and AI agents alike. The root
   `README.md` in the same change that adds or moves a file.
 
 ## Checks before any push
-- `python3 -m unittest discover -s src/tests`
-- `claude plugin validate --strict .` and `claude plugin validate --strict src/louvi`
+- `npm ci`, then `npm run typecheck` (the `.mjs` files are type-checked with
+  `// @ts-check`, with no build step) and `npm test` (Node's test runner)
+- `npm run validate`: `claude plugin validate --strict` on the marketplace
+  and the plugin
 
-CI runs the tests on every pull request and push to `main`.
+CI runs all three on every pull request and push to `main`.
+
+## Tech
+Node.js (22 or later) and TypeScript, with no Python. The plugin's guards use
+Node's standard library only, so installing the plugin needs nothing beyond
+Node, which Claude Code already has. `package.json` holds only dev tooling.
 
 ## Guards on this repo
 This repo uses its own plugin. `local/louvi.json` turns on `protect-branch` for
