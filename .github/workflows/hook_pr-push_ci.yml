@@ -1,0 +1,30 @@
+# Hook: on every pull request and push to main, type-check and test the guards and
+# validate the plugin and marketplace manifests (docs/CLAUDE_louvi.md, "Checks before any push").
+name: hook_pr-push_ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - name: Type-check
+        run: npm run typecheck
+      - name: Guard tests
+        run: npm test
+      - name: Validate the marketplace and plugin
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          npm run validate

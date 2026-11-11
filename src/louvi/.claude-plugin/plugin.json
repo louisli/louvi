@@ -1,0 +1,10 @@
+{
+  "name": "louvi",
+  "version": "0.1.0",
+  "description": "A starting point for working with AI: patterns, repo structure, ticket-first work, and config-driven guards. The parts that fill it come from contributors.",
+  "author": { "name": "The Louvi authors" },
+  "homepage": "https://louvi.dev",
+  "repository": "https://github.com/louisli/louvi",
+  "license": "MIT",
+  "keywords": ["workflow", "skeleton", "guardrails", "patterns", "repo-structure"]
+}
