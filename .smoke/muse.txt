@@ -1,0 +1,2 @@
+smoke test - muse end-to-end check 20261124-2317
+Harmless file added by the smoke-test branch; removed by the revert PR.
